@@ -1,0 +1,107 @@
+/* The CSS file is rognaized by element, then classes and finishing wiht media queries */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F7FBFC;
+}
+/* Footer use css position to stay in place */
+footer {
+    bottom: 0;
+    padding: 0.5rem;            
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    background-color: #424874;
+}
+
+h2 {
+    margin-top: 5%;
+}
+
+/* header area use css position to stay in place */
+.headerformat {
+    padding: 1rem;
+    top: 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    color: white;
+    background-color: #424874;
+}
+
+.container-fluid {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Sidebar area use css position to stay in place and overflow-y add scroll functions */
+.sidebar {
+    top: 5rem;
+    bottom: 2rem;
+    padding: 1rem;
+    width: 25%;
+    position: fixed;
+    overflow-y: scroll;
+    background-color: #B9D7EA;
+}
+
+.main-content {
+    margin-left: 30%;
+    margin-right: 3%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 15rem;
+    width: 75%;
+    overflow-y: scroll;
+    background-color: #D6E6F2;
+}
+
+.badge-new {
+    background-color: #ffc107;
+}
+
+.badge-tag {
+    background-color: #17a2b8;
+}
+
+.badge-max {
+    background-color: #8B0000;
+}
+
+.badge-ten {
+    background-color: #8B4513;
+}
+
+.badge-mon {
+    background-color: #8B008B;
+}
+
+/* Changing display to block and positions allow to change the responsiveness to just one column*/
+@media (max-width: 768px) {
+    .container-fluid {
+        display:block;
+        position: relative;
+    }
+    .sidebar {
+        margin-top: 1rem;
+        width: auto;
+        border-radius: 20px;
+        position: static;
+        overflow-y:hidden;
+
+    }
+    .main-content {
+        margin-left: 1rem;
+        padding-bottom: 3rem;
+        width: auto;
+        border-radius: 20px;
+        position: static;
+        overflow-y:hidden;
+    }
+}

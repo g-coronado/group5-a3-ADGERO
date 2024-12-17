@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenley's Biography</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/GermanCoronado.css">
+</head>
+<!-- I decided to use Grid a template to make the structure of the page as follows:  
+    grid-template-areas: 
+    "header header"
+    "sidebar content"
+    "footer footer";
+    grid-template-columns: 1fr 3fr; 
+For small screens I am changin the Grid template to:
+    grid-template-areas: 
+    "header" 
+    "content"
+    "sidebar"
+    "footer";
+    grid-template-columns: 1fr;
+On top of the Grid template I am using bootstrap. 
+To handle Grid responsiveness I am using media queries on an external css file. All styling not included in bootstrap
+was added using the external css file.  
+To allow the header and footer to stay in place I am using bootstrap, to allow the sidebar to stay in place I am uusing
+positon static using css  -->
+<body>
+    <!-- setting the grid container -->
+    <div class="wrapcontainer">
+        <!-- starting the main header div, it includes header and a nav, the mainheader and headcolor classes are in css file
+         other classes are from bootstrap-->
+        <div class="mainheader sticky-top">
+            <header class="text-center pb-1 headcolor">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="./index.html">Travis' blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="./AdeyomiSolomon.html">Mona's Biography</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="./RomeoCruz.html">Maxwells' Biography</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <h1>Tenley's Biography</h1>
+            </header>
+        </div>
+        <!-- Starting the sidebar. The gridleftside and leftsidebar are in css, other are bootsrap. The leftsidebar have position : fixed -->
+        <div class="gridleftside">
+            <div class="container-fluid leftsidebar">
+                <nav class="modal-dialog ms-4">
+                    <header>
+                        <h2>Gallery:</h2>
+                    </header>
+                    <div class="card pt-2">
+                        <img src="./assets/image/tenley2.jpg" class="card-img-top mx-auto" alt="a cat resting">
+                        <div class="card-body">
+                            <p class="card-text text-center">Tenley resting after playing.</p>
+                        </div>
+                    </div>
+                    <div class="card pt-2 mt-2">
+                        <img src="./assets/image/tenley7.jpg" class="card-img-top mx-auto" alt="a cat being petted">
+                        <div class="card-body">
+                            <p class="card-text text-center">Tenley enjoying a petted.</p>
+                        </div>
+                    </div>
+                    <div class="card pt-2 mt-2">
+                        <img src="./assets/image/tenley5.jpg" class="card-img-top mx-auto" alt="a cat in a bed">
+                        <div class="card-body">
+                            <p class="card-text text-center">Tenley asking me why I'm not at bed.</p>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </nav>
+            </div>
+        </div>
+        <!-- The main includes two sections, one for the Biography and another for Tenley's best pictures.
+         The classmargin is defined in css files, other clases are from bootstrap-->
+        <main>             
+            <section>
+                <header>
+                    <h2>About Tenley:</h2>
+                </header> 
+                <br> 
+                <p>“Tenley is the cat most recently adopted into my home, and she was about a year old when I got her. She’s around 4 years old now – the time sure does fly. After I lost Maxwell, I volunteered at the local animal shelter to help all the kitties who didn’t have a home, and every morning when I walked into that room, she came up to me and was super affectionate and interested. I knew immediately: I would adopt this cat!</p>
+                <p>She took no time to get adjusted to my home, and is one of the sweetest cats I’ve ever met. She loves to cuddle and be petted, and never runs out of energy. Her favorite thing to do is carry her fishing rod around at 3AM and meow looking for attention.</p>
+                <p>Her and Mona don’t get along extremely well, in part because of a clash of personalities. Tenley is very active and outgoing and full of energy, so with a more anxious cat, it just doesn’t work well. But overall they’ve learned to co-exist without issue, so it’s fine.”</p>
+            </section>
+            <!-- Using bootstrap columns I was able to handle the carousel position and size. -->
+            <section class="col-md-4 offset-md-4 classmargin">
+                <header>
+                    <h3>Tenley's best pictures:</h3>
+                </header> 
+                <div id="tenleyCarousel" class="carousel slide me-3">
+                    <div class="carousel-inner">
+                        <img src="./assets/image/tenley1.jpg" class="carousel-item active" alt="a cat">
+                        <img src="./assets/image/tenley4.jpg" class="carousel-item" alt="a cat playing">
+                        <img src="./assets/image/tenley3.jpg" class="carousel-item" alt="a cat">
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#tenleyCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#tenleyCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <br><br><br>    
+            </section>
+        </main>
+        <!-- Starting the footer.  I am using bootstrap to have the footer in place -->
+        <footer class="fixed-bottom">
+            <div class="container-fluid text-center pt-2">
+                <p>Page made by German Coronado Perez. Images provided by "Travis Cattington."</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Activating carousel -->
+    <script>
+        const myCarouselElement = document.querySelector('#myCarousel');
+        const carousel = new bootstrap.Carousel(myCarouselElement, {});
+    </script>
+</body>
+</html>

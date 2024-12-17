@@ -1,0 +1,105 @@
+/* My css file is organized by element, classes and media queries.  */
+
+main {
+    margin-right: 3%;
+    margin-left: -3%;
+    padding-top: 10px;
+    grid-area: content;
+}
+
+h3 {
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Class defining the colors of the footer and entire main header color */
+.headcolor, footer {
+    color: white;
+    background-color: #8B4513;
+    text-align: center;
+}
+
+/* Class defining the sidebar grid area.*/
+.gridleftside {
+    grid-area: sidebar;
+}
+
+/* Class defining the header grid area, using a class allow me to use the header element in other sections of html document*/
+.mainheader {
+    grid-area: header;
+}
+
+
+/* This class define the Grid template to set the main structure of the webpage  */
+.wrapcontainer {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "sidebar content"
+    "footer footer";
+    grid-template-columns: 1fr 3fr; 
+}
+
+/* This class handle the left sidebar div */
+.leftsidebar {
+    width: 20%;
+    height: 83%;
+    padding-top: 10px;
+    background-color: white;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+/* I define three media queries to add responsivenes to non bootstrap elements in the webpage */
+/* The first media querie define the main changes for smaller screen sizes.  I change the 4 columns to 1 column array, adjust margins and text alignment. */
+@media screen and (max-width: 960px) {
+    main {
+        margin-left: 3%;
+    }
+    h2 {
+        text-align: center;
+    }
+    .leftsidebar {
+        width: 35%;
+        margin-left: 30%;
+        height: 100%;
+        position: static;
+        overflow-y: hidden;
+    }
+    .wrapcontainer {
+        display: grid;
+        grid-template-areas: 
+        "header" 
+        "content"
+        "sidebar"
+        "footer";
+        grid-template-columns: 1fr;
+    }
+}
+
+/* This second media querie adds changes to margins for smaller screens and pair with bootstrap responsiveness */
+@media screen and (max-width: 767px) {
+    .leftsidebar {
+        width: 50%;
+        margin-left: 25%;
+    }
+    .classmargin {
+        margin-left: 30%;
+        margin-right: 20%;
+    }
+}
+/* This third media querie adds changes to margins for smaller screens and pair with bootstrap responsiveness */
+@media screen and (max-width: 600px) {
+    .leftsidebar {
+        width: 85%;
+        margin-left: 7%;
+
+    }
+    .classmargin {
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+}
